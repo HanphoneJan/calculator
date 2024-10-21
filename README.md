@@ -1,2 +1,2 @@
-# c_first
-the fisrt repostitory of c
+# 四则运算计算器
+支持linux和windows，输入四则运算表达式，输出计算结果
