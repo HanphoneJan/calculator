@@ -1,0 +1,48 @@
+Result1:7.000000
+Result2:1.000000
+Result3:1.000000
+Result4:8.000000
+Result5:Incorrect input
+Result6:Incorrect input
+Result7:Incorrect input
+Result8:419.230000
+Result9:35.000000
+Result10:17.500000
+Result11:-25.000000
+Result12:-1.000000
+Result13:5.000000
+Result1:7.000000
+Result2:1.000000
+Result3:1.000000
+Result4:8.000000
+Result5:Incorrect input
+Result6:Incorrect input
+Result7:Incorrect input
+Result8:419.230000
+Result9:35.000000
+Result10:17.500000
+Result11:-25.000000
+Result12:-1.000000
+Result13:5.000000
+Result1:Incorrect input
+Result2:Incorrect input
+Result3:419.230000
+Result4:35.000000
+Result5:17.500000
+Result6:-25.000000
+Result7:-1.000000
+Result8:5.000000
+Result9:0.222200
+Result1:7.000000
+Result2:1.000000
+Result3:1.000000
+Result4:8.000000
+Result5:Incorrect input
+Result6:Incorrect input
+Result7:Incorrect input
+Result8:419.230000
+Result9:35.000000
+Result10:17.500000
+Result11:-25.000000
+Result12:-1.000000
+Result13:5.000000

@@ -1,0 +1,14 @@
+Result1:incorrect input.Result2:incorrect input.Result3:incorrect input.Result4:incorrect input.Result1:7.000000
+Result2:1.000000
+Result3:1.000000
+Result4:8.000000
+Result5:Incorrect input
+Result6:Incorrect input
+Result7:Incorrect input
+Result8:419.230000
+Result9:35.000000
+Result10:17.500000
+Result11:-25.000000
+Result12:-1.000000
+Result13:5.000000
+Result14:0.222200
