@@ -1,0 +1,33 @@
+# Linux Makefile for Calculator
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -g -O2 -D_POSIX_C_SOURCE=200809L
+LDFLAGS = -lreadline -lcurses
+
+SRCDIR = src
+OBJDIR = obj
+BINDIR = .
+
+SOURCES = $(wildcard $(SRCDIR)/*.c)
+OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
+TARGET = $(BINDIR)/calculator
+
+.PHONY: all clean directories
+
+all: directories $(TARGET)
+
+directories:
+	@mkdir -p $(OBJDIR)
+
+$(TARGET): $(OBJECTS)
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean:
+	rm -rf $(OBJDIR) $(TARGET)
+
+# 调试目标
+debug: CFLAGS += -DDEBUG
+debug: all

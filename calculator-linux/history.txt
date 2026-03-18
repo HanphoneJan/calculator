@@ -1,6 +1,0 @@
-1+2Result:3.000000
-quit
-1+2Result:3.000000
-2+2342Result:2344.000000
-help
-quit

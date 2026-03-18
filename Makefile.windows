@@ -1,0 +1,34 @@
+# Windows Makefile for Calculator (MinGW)
+
+CC = gcc
+CFLAGS = -Wall -Wextra -g -O2
+LDFLAGS =
+
+SRCDIR = src
+OBJDIR = obj
+BINDIR = .
+
+SOURCES = $(wildcard $(SRCDIR)/*.c)
+OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
+TARGET = $(BINDIR)/calculator.exe
+
+.PHONY: all clean directories
+
+all: directories $(TARGET)
+
+directories:
+	@if not exist $(OBJDIR) mkdir $(OBJDIR)
+
+$(TARGET): $(OBJECTS)
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean:
+	@if exist $(OBJDIR) rmdir /S /Q $(OBJDIR)
+	@if exist $(TARGET) del /Q $(TARGET)
+
+# 调试目标
+debug: CFLAGS += -DDEBUG
+debug: all
