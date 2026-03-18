@@ -35,6 +35,7 @@
 | ------- | --------- | ----------------- |
 | Linux   | GCC 4.8+  | readline, ncurses |
 | Windows | MinGW-w64 | 无额外依赖        |
+| MSYS2   | GCC       | 无额外依赖        |
 
 ### 安装依赖
 
@@ -69,6 +70,9 @@ make -f Makefile.linux
 
 # Windows (MinGW)
 make -f Makefile.windows
+
+# MSYS2
+make -f Makefile.msys2
 ```
 
 ### 运行
@@ -164,6 +168,7 @@ calculator/
 │   └── test_basic.c         # 基础功能单元测试
 ├── Makefile.linux            # Linux 构建配置
 ├── Makefile.windows          # Windows 构建配置
+├── Makefile.msys2            # MSYS2 构建配置
 └── README.md                 # 项目文档
 ```
 

@@ -5,9 +5,14 @@
 #ifdef PLATFORM_WINDOWS
 #include <windows.h>
 #include <conio.h>
-#else
+#endif
+
+#if !defined(PLATFORM_WINDOWS) && !defined(MSYS2)
 #include <readline/readline.h>
 #include <readline/history.h>
+#endif
+
+#if !defined(PLATFORM_WINDOWS)
 #include <unistd.h>
 #endif
 
@@ -61,52 +66,22 @@ int read_line(char* buffer, int max_len) {
         return -1;
     }
 
-#ifdef PLATFORM_WINDOWS
-    /* Windows: 使用getche实现带编辑功能的输入 */
+#if defined(PLATFORM_WINDOWS) || defined(MSYS2)
+    /* Windows 或 MSYS2: 使用标准输入 */
     printf("Enter: ");
-    int i = 0;
-    int ch;
+    fflush(stdout);
 
-    while (i < max_len - 1) {
-        ch = getch();
-
-        /* Enter键结束输入 */
-        if (ch == '\r' || ch == '\n') {
-            break;
-        }
-
-        /* Ctrl+C */
-        if (ch == 3) {
-            buffer[0] = '\0';
-            return -1;
-        }
-
-        /* Backspace */
-        if (ch == 8) {
-            if (i > 0) {
-                i--;
-                printf("\b \b");
-            }
-            continue;
-        }
-
-        /* Ctrl+D 或 'd'/'D' 清屏 */
-        if (ch == 4 || ch == 'd' || ch == 'D') {
-            if (i == 0) {
-                printf("\r                                  \rEnter: ");
-                continue;
-            }
-        }
-
-        /* 可打印字符 */
-        if (ch >= 32 && ch < 127) {
-            buffer[i++] = (char)ch;
-            putchar(ch);
-        }
+    if (fgets(buffer, max_len, stdin) == NULL) {
+        buffer[0] = '\0';
+        return -1;
     }
 
-    buffer[i] = '\0';
-    printf("\n");
+    /* 去除换行符 */
+    size_t len = strlen(buffer);
+    if (len > 0 && buffer[len - 1] == '\n') {
+        buffer[len - 1] = '\0';
+    }
+
     return 0;
 #else
     /* Linux: 使用readline */
