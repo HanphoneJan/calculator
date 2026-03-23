@@ -219,3 +219,13 @@ gdb ./calculator
 - 使用 4 空格缩进
 - 函数命名使用小写+下划线（snake_case）
 - 宏命名使用全大写+下划线
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=HanphoneJan%2Fcalculator&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=HanphoneJan/calculator&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=HanphoneJan/calculator&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=HanphoneJan/calculator&type=date&legend=top-left" />
+ </picture>
+</a>
